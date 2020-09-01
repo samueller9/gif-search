@@ -8,7 +8,6 @@ const Tenor = require("tenorjs").client({
     "Locale": "en_US", // Your locale here, case-sensitivity depends on input
 });
 
-
 // App Setup
 const app = express();
 
@@ -17,6 +16,9 @@ const exphbs  = require('express-handlebars');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+// Somewhere near the top
+app.use(express.static('public'));
 
 // Routes
 
