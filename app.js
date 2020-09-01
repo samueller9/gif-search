@@ -19,16 +19,6 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('home')
-})
-
-// example URL "http://localhost:3000/?term=hey"
-app.get('/', (req, res) => {
-  console.log(req.query) // => "{ term: hey" }
-
-  res.render('home')
-})
 
 app.get('/greetings/:name', (req, res) => {
   // grab the name from the path provided
